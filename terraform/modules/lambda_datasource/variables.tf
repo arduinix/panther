@@ -5,11 +5,13 @@ variable "app_name" {
 
 variable "appsync_id" {
   type        = string
+  default     = null
   description = "The appsync id."
 }
 
 variable "appsync_role_arn" {
   type        = string
+  default     = null
   description = "The appsync service role arn."
 }
 
@@ -71,7 +73,7 @@ variable "default_runtime" {
 
 variable "publish" {
   type        = bool
-  default     = false
+  default     = true
   description = "Whether to publish the lambda function"
 }
 
