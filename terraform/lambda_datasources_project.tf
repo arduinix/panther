@@ -19,10 +19,12 @@ module "lambda_datasources_project" {
     createProject = {
       fn_name       = "createProject"
       resolver_type = "Mutation"
-      #   source_dir    = "${path.root}/..//out/createProject"
-      source_zip = "${path.root}/../backend_api/dist/createProject.zip"
-      timeout    = 30
-      statements = []
+      source_dir    = "${path.root}/../backend_api/out/project/createProject"
+      source_zip       = "${path.root}/../backend_api/dist/createProject.zip"
+      timeout          = 30
+      lambda_layer_arn = local.libs_layer_arn
+      statements       = []
+
     },
   }
 
