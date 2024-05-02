@@ -1,8 +1,9 @@
 {
+  "ts-node": { "esm": true },
   "compilerOptions": {
-    "lib": ["ES2023"],
-    "module": "node16",
-    "target": "ES2022",
+    "module": "CommonJS",
+    "target": "es2020",
+    "moduleResolution": "node",
     "strict": true,
     "preserveConstEnums": true,
     "noEmit": false,
@@ -14,15 +15,13 @@
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "outDir": "out",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "*": [
           "node_modules/*",
           "src/types/*",
       ],
-      "@lib/*": ["src/lib/*"],
-      "@types/*": ["src/types/*"]
-      
+      "/opt/lib/*": ["src/lib/*"]
     },
   },
   "exclude": ["node_modules", "**/*.test.ts"]

@@ -1,4 +1,4 @@
-import { logger } from '@lib/logger'
+import { logger } from '/opt/lib/logger'
 // import { Project } from '../../types'
 
 export const handler = async (event: any) => {
@@ -19,8 +19,4 @@ export const handler = async (event: any) => {
       input: event,
     }),
   }
-}
-
-if (require.main === module) {
-  handler(null)
 }
