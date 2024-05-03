@@ -1,5 +1,4 @@
 import {
-  Image,
   Switch,
   Tooltip,
   Box,
@@ -8,6 +7,12 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import { PiDoorBold, PiDoorOpenBold } from "react-icons/pi";
+import {
+  getCurrentUser,
+  signIn,
+  signOut,
+  SignInInput,
+} from "@aws-amplify/auth";
 
 export interface HeaderProps {
   loggedIn: boolean;
@@ -43,7 +48,7 @@ export default function Header({ loggedIn, handleLogout }: HeaderProps) {
               <IconButton
                 aria-label="Logout"
                 icon={<PiDoorOpenBold />}
-                // onClick={toggleColorMode}
+                onClick={() => signOut()}
                 size={"lg"}
                 variant={"ghost"}
               />
