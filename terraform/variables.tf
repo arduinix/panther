@@ -47,3 +47,9 @@ variable "s3_log_retention_days" {
 #   default     = 15
 #   description = "value in days to set the default retention in CloudWatch Log Groups"
 # }
+
+variable "frontend_auth_domain" {
+  type = string
+  default = "portalauth"
+  description = "The domain for the frontend auth"
+}

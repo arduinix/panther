@@ -3,7 +3,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useState } from "react";
 import Navigation, { LinkItemProps } from "../navigation/Navigation";
 import Home from "../../pages/home/Home";
-import Header from "../header/Header";
 import ContactModal from "../contact-modal/ContactModal";
 import {
   PiHouseLight,
@@ -75,7 +74,6 @@ export default function MainLayout() {
         left="50%"
         transform="translate(-50%, -50%)"
       >
-        <Header />
         <Flex overflow="scroll">
           <Navigation linkItems={linkItems} />
           <Box p={4} w="100%" flexGrow={1} overflow="scroll">
