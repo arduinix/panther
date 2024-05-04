@@ -6,20 +6,14 @@ import {
   useColorMode,
   IconButton,
 } from "@chakra-ui/react";
-import { PiDoorBold, PiDoorOpenBold } from "react-icons/pi";
-import {
-  getCurrentUser,
-  signIn,
-  signOut,
-  SignInInput,
-} from "@aws-amplify/auth";
+import { PiDoorOpenBold } from "react-icons/pi";
+import { signOut } from "@aws-amplify/auth";
 
 export interface HeaderProps {
   loggedIn: boolean;
-  handleLogout: () => void;
 }
 
-export default function Header({ loggedIn, handleLogout }: HeaderProps) {
+export default function Header({ loggedIn }: HeaderProps) {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box h="70">
@@ -43,22 +37,12 @@ export default function Header({ loggedIn, handleLogout }: HeaderProps) {
         </Box>
 
         <Box>
-          {loggedIn ? (
+          {loggedIn && (
             <Tooltip label="Logout">
               <IconButton
                 aria-label="Logout"
                 icon={<PiDoorOpenBold />}
                 onClick={() => signOut()}
-                size={"lg"}
-                variant={"ghost"}
-              />
-            </Tooltip>
-          ) : (
-            <Tooltip label="Login">
-              <IconButton
-                aria-label="Login"
-                icon={<PiDoorBold />}
-                // onClick={toggleColorMode}
                 size={"lg"}
                 variant={"ghost"}
               />

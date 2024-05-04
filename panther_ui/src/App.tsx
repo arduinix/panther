@@ -1,21 +1,33 @@
-import { Authenticator } from "@aws-amplify/ui-react";
+import { Authenticator, withAuthenticator } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import "./App.css";
 import { amplifyAuthConfig } from "./lib/auth/amplifyAuthConfig";
-import Router from "./Router";
-import '@aws-amplify/ui-react/styles.css';
-import '@aws-amplify/ui-react/styles/reset.layer.css'
-import '@aws-amplify/ui-react/styles/base.layer.css'
-import '@aws-amplify/ui-react/styles/button.layer.css'
+import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter } from "react-router-dom";
+import "./App.css";
+import ErrorBoundary from "./components/error-boundary/ErrorBoundary";
+import AppRouter from "./Routes";
+import theme from "./theme";
+
+import "@aws-amplify/ui-react/styles.css";
+import "@aws-amplify/ui-react/styles/reset.layer.css";
+import "@aws-amplify/ui-react/styles/base.layer.css";
+import "@aws-amplify/ui-react/styles/button.layer.css";
 
 Amplify.configure(amplifyAuthConfig);
 
 function App() {
   return (
     <Authenticator>
-      <Router />
+      <BrowserRouter>
+        <ErrorBoundary>
+          <ChakraProvider theme={theme}>
+            <AppRouter />
+          </ChakraProvider>
+        </ErrorBoundary>
+      </BrowserRouter>
     </Authenticator>
   );
 }
 
-export default App;
+export default withAuthenticator(App, {});
