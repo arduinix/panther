@@ -15,6 +15,7 @@ export interface HeaderProps {
 
 export default function Header({ loggedIn }: HeaderProps) {
   const { colorMode, toggleColorMode } = useColorMode();
+  console.log("colorMode: ", colorMode);
   return (
     <Box h="70">
       <Flex alignItems="center" height="100%" p="10" justifyContent="flex-end">

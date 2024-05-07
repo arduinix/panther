@@ -4,15 +4,13 @@ import { useState } from "react";
 import Navigation, { LinkItemProps } from "../navigation/Navigation";
 import Home from "../../pages/home/Home";
 import ContactModal from "../contact-modal/ContactModal";
-import {
-  PiHouseLight,
-} from "react-icons/pi";
+import { LuHome, LuTrees } from "react-icons/lu";
 import { axiosClient } from "../../lib/auth/AxiosClient";
 import { Contact } from "../../types";
 
 export default function MainLayout() {
   const location = useLocation();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onClose } = useDisclosure();
   const toast = useToast();
   const [contact, setContact] = useState<Contact>({
     name: "",
@@ -22,7 +20,13 @@ export default function MainLayout() {
   });
 
   const linkItems: Array<LinkItemProps> = [
-    { name: "Home", icon: PiHouseLight, href: "/" },
+    { name: "Home", icon: LuHome, href: "/" },
+    {
+      name: "Eco Systems",
+      icon: LuTrees,
+      href: "/ecosystems",
+      tooltip: "Create new eco systems or manage existing ones.",
+    },
   ];
 
   const onSend = async () => {

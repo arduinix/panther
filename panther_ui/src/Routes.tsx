@@ -2,11 +2,11 @@ import { Route, Routes } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import { isLoggedIn } from "./lib/auth/CognitoAuth";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 import NotFound from "./pages/not-found/NotFound";
 import MainLayout from "./components/main-layout/MainLayout";
-import panther from "./assets/pantherbg.jpg";
 import Header from "./components/header/Header";
-import { withAuthenticator } from "@aws-amplify/ui-react";
+import EcoSystems from "./pages/eco-systems/EcoSystems";
 
 function AppRouter() {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
@@ -23,7 +23,7 @@ function AppRouter() {
     <>
       <Header loggedIn={loggedIn} />
       <Box position={"relative"} minHeight={"100vh"}>
-        <Box
+        {/* <Box
           backgroundImage={panther}
           bgSize="cover"
           bgPosition="center"
@@ -34,11 +34,11 @@ function AppRouter() {
           left="0"
           width="100%"
           height="100%"
-        />
-
+        /> */}
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<MainLayout />}>
+            <Route path="/ecosystems" element={<EcoSystems />} />
             {/* <Route path="about" element={<About />} />
         <Route path="projects" element={<Projects />} /> */}
           </Route>
