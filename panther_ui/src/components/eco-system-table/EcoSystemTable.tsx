@@ -19,9 +19,9 @@ export default function EcoSystemTable({ data }: EcoSystemTableProps) {
   const navigate = useNavigate()
   const { viewId } = useParams<{ viewId: string }>()
   return (
-    <TableContainer>
+    <TableContainer m={2}>
       <Table colorScheme="gray">
-        <TableCaption>Select an Eco System to see more details.</TableCaption>
+        <TableCaption>Select an Ecosystem to see more details.</TableCaption>
         <Thead>
           <Tr>
             <Th>Name</Th>

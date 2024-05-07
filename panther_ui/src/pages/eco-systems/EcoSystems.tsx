@@ -8,12 +8,16 @@ import {
   Tooltip,
   Heading,
   Button,
+  Checkbox,
+  Divider,
+  Center,
 } from '@chakra-ui/react'
 import { EcoSystem } from '../../types'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import EcoSystemTable from '../../components/eco-system-table/EcoSystemTable'
 import ecoSystems from '../../model_data/ecosystems.json'
+import EcoSystemDetailsPane from '../../components/eco-system-details-pane/EcoSystemDetailsPane'
 const data: EcoSystem[] = ecoSystems
 
 export default function EcoSystems() {
@@ -26,21 +30,34 @@ export default function EcoSystems() {
   })
   return (
     <>
-      <Heading size={'lg'}>Eco Systems</Heading>
+      <Heading size={'lg'}>Ecosystems</Heading>
       <Flex mt={3}>
         <Box width={'65%'} m={2}>
-          <Flex direction="column" align="flex-end" m={2}>
-            <EcoSystemTable
-              data={data}
-              //   setSelectedRow={() => navigate('/ecosystems/id')}
-            />
-            <Button mt={3} colorScheme="blue">
-              New Ecosystem
-            </Button>
+          <Flex m={2}>
+            {!data || data.length === 0 ? (
+              <Text>
+                There are no ecosystems to display. Please create a new
+                ecosystem.
+              </Text>
+            ) : (
+              <EcoSystemTable data={data} />
+            )}
+          </Flex>
+          <Flex
+            gap={4}
+            mr={4}
+            justifyContent={'flex-end'}
+            flexDirection={'row'}
+          >
+            <Checkbox>Show Removed</Checkbox>
+            <Button colorScheme="blue">New Ecosystem</Button>
           </Flex>
         </Box>
+        <Center>
+          <Divider orientation="vertical" />
+        </Center>
         <Box width={'35%'} m={2}>
-          <Text>Eco System Details</Text>
+          <EcoSystemDetailsPane />
         </Box>
       </Flex>
     </>
