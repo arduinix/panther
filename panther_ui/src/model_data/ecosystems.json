@@ -13,7 +13,8 @@
     "longitudeCenter": -80.974392,
     "elevation": 10,
     "fTotalImages": 3,
-    "fIdentifiedSpecies": 2
+    "fIdentifiedSpecies": 2,
+    "createdDate": "2024-01-01"
   },
   {
     "id": "2",
@@ -29,7 +30,8 @@
     "longitudeCenter": -105.664216,
     "elevation": 8125,
     "fTotalImages": 10,
-    "fIdentifiedSpecies": 5
+    "fIdentifiedSpecies": 5,
+    "createdDate": "2024-01-01"
   },
   {
     "id": "3",
@@ -45,7 +47,8 @@
     "longitudeCenter": -119.593604,
     "elevation": 4000,
     "fTotalImages": 5,
-    "fIdentifiedSpecies": 3
+    "fIdentifiedSpecies": 3,
+    "createdDate": "2024-01-01"
   },
   {
     "id": "4",
@@ -61,7 +64,8 @@
     "longitudeCenter": -83.4294,
     "elevation": 2000,
     "fTotalImages": 7,
-    "fIdentifiedSpecies": 4
+    "fIdentifiedSpecies": 4,
+    "createdDate": "2024-01-01"
   },
   {
     "id": "5",
@@ -77,6 +81,7 @@
     "longitudeCenter": -112.1129,
     "elevation": 7000,
     "fTotalImages": 8,
-    "fIdentifiedSpecies": 6
+    "fIdentifiedSpecies": 6,
+    "createdDate": "2024-01-01"
   }
 ]

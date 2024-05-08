@@ -6,7 +6,7 @@ import { withAuthenticator } from '@aws-amplify/ui-react'
 import NotFound from './pages/not-found/NotFound'
 import MainLayout from './components/main-layout/MainLayout'
 import Header from './components/header/Header'
-import EcoSystems from './pages/eco-systems/EcoSystems'
+import Ecosystems from './pages/ecosystems/Ecosystems'
 
 function AppRouter() {
   const [loggedIn, setLoggedIn] = useState<boolean>(false)
@@ -38,7 +38,7 @@ function AppRouter() {
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<MainLayout />}>
-            <Route path="/ecosystems/:viewId?" element={<EcoSystems />} />
+            <Route path="/ecosystems/:viewId?" element={<Ecosystems />} />
             {/* <Route path="about" element={<About />} />
         <Route path="projects" element={<Projects />} /> */}
           </Route>

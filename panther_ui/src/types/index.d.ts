@@ -5,7 +5,7 @@ export interface Contact {
   message: string
 }
 
-export interface EcoSystem {
+export interface Ecosystem {
   id: string
   name: string
   description: string
@@ -14,9 +14,11 @@ export interface EcoSystem {
   outerEntity: string
   county: string
   state: string
+  country: string
   latitudeCenter: number
   longitudeCenter: number
   elevation: number
+  createdDate: string
   fTotalImages: number
   fIdentifiedSpecies: number
 }

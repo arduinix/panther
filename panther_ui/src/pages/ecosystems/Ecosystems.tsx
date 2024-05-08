@@ -1,26 +1,22 @@
 import {
   Box,
   Flex,
-  FlexProps,
-  Icon,
   Text,
-  useMediaQuery,
-  Tooltip,
   Heading,
   Button,
   Checkbox,
   Divider,
   Center,
 } from '@chakra-ui/react'
-import { EcoSystem } from '../../types'
+import { Ecosystem } from '../../types'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
-import EcoSystemTable from '../../components/eco-system-table/EcoSystemTable'
+import EcosystemTable from '../../components/ecosystem-table/EcosystemTable'
 import ecoSystems from '../../model_data/ecosystems.json'
-import EcoSystemDetailsPane from '../../components/eco-system-details-pane/EcoSystemDetailsPane'
-const data: EcoSystem[] = ecoSystems
+import EcosystemDetailsPane from '../../components/ecosystem-details-pane/EcosystemDetailsPane'
+const data: Ecosystem[] = ecoSystems
 
-export default function EcoSystems() {
+export default function Ecosystems() {
   const navigate = useNavigate()
   const { viewId } = useParams<{ viewId: string }>()
   useEffect(() => {
@@ -40,7 +36,7 @@ export default function EcoSystems() {
                 ecosystem.
               </Text>
             ) : (
-              <EcoSystemTable data={data} />
+              <EcosystemTable data={data} />
             )}
           </Flex>
           <Flex
@@ -56,8 +52,8 @@ export default function EcoSystems() {
         <Center>
           <Divider orientation="vertical" />
         </Center>
-        <Box width={'35%'} m={2}>
-          <EcoSystemDetailsPane />
+        <Box width={'35%'} m={2} background={'gray.50'}>
+          <EcosystemDetailsPane />
         </Box>
       </Flex>
     </>

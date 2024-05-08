@@ -5,6 +5,7 @@
   "dependencies": {
     "@aws-amplify/auth": "^6.2.2",
     "@aws-amplify/ui-react": "^6.1.9",
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",

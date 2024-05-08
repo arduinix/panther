@@ -8,14 +8,14 @@ import {
   TableCaption,
   TableContainer,
 } from '@chakra-ui/react'
-import { EcoSystem } from '../../types'
+import { Ecosystem } from '../../types'
 import { useNavigate, useParams } from 'react-router-dom'
 
-export interface EcoSystemTableProps {
-  data: EcoSystem[]
+export interface EcosystemTableProps {
+  data: Ecosystem[]
 }
 
-export default function EcoSystemTable({ data }: EcoSystemTableProps) {
+export default function EcosystemTable({ data }: EcosystemTableProps) {
   const navigate = useNavigate()
   const { viewId } = useParams<{ viewId: string }>()
   return (
