@@ -8,6 +8,7 @@ import {
   UnorderedList,
 } from '@chakra-ui/react'
 import { Ecosystem } from '../../types'
+import { LocationMap } from '../location-map/LocationMap'
 
 export default function EcosystemDetailsTabPanel({
   ecosystem,
@@ -28,11 +29,14 @@ export default function EcosystemDetailsTabPanel({
   return (
     <Tabs>
       <TabList>
+        <Tab>Map</Tab>
         <Tab>Geo</Tab>
         <Tab>Municipality</Tab>
       </TabList>
-
       <TabPanels>
+        <TabPanel bg={'gray.50'}>
+          <LocationMap lat={latitudeCenter} lng={longitudeCenter} />
+        </TabPanel>
         <TabPanel bg={'gray.50'}>
           <UnorderedList>
             <ListItem>
