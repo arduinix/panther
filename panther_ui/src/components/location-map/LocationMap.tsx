@@ -22,7 +22,7 @@ export function LocationMap({ lat, lng }: LocationMapProps) {
   }
 
   return (
-    <Box style={{ height: '40vh', width: '100%' }}>
+    <Box style={{ height: '350px', width: '100%' }}>
       {!googleMapsKey ? (
         <Center>
           <Text>
